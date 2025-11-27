@@ -20,7 +20,7 @@ export default function MainPageLayout(){
         <div className={`${bitcount.className} flex justify-center`}>
             <div className="mt-10 text-center">
                 <div className="mx-3 text-3xl lg:text-4xl text-blue-500 font-semibold hover:scale-[1.1] lg:hover:scale-[1.2] duration-300">
-                    Co-Learn Tic-Tac-Toe
+                    CoLearn Tic-Tac-Toe
                 </div>
                 <div className="lg:text-lg mt-3 text-base mx-8 text-left text-yellow-600 font-medium">
                     <div className='text-center'>
@@ -28,7 +28,7 @@ export default function MainPageLayout(){
                     </div>
                     <div className='mt-10 text-base text-blue-500 flex flex-col lg:flex-row gap-4'>
                         <div>
-                            &gt; choose grid amount: 
+                            &gt; choose grid size: 
                         </div>
                         
                         <div className='flex gap-5 justify-center lg:justify-normal'>
