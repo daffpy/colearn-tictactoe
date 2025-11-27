@@ -13,7 +13,7 @@ export function GameStateAlert({isWin, setGrid, setResult}){
                 <div className="text-4xl mt-10 text-center uppercase font-semibold">
                     - YOU {isWin} -
                 </div>
-                <div className="py-4 px-6 lg:px-8 lg:py-6">
+                <div className="py-4 px-6 lg:px-8 lg:py-4">
                     <br/>
                     <div className="text-base">
                         <p>
