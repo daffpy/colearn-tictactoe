@@ -28,29 +28,29 @@ export default function MainPageLayout(){
                     </div>
                     <div className='mt-10 text-base text-blue-500 flex gap-4'>
                         &gt; choose grid amount: 
-                        <div className='flex gap-5 cursor-pointer'>
-                            <div className={`hover:text-yellow-600 ${gridChoice == 3 ? "text-yellow-600" : ""} ${gridChoice != 3 && gridChoice != 0 ? "pointer-events-none opacity-50" : ""}`}
+                        <div className='flex gap-5'>
+                            <div className={`hover:text-yellow-600 ${gridChoice == 3 ? "text-yellow-600" : ""} ${gridChoice != 3 && gridChoice != 0 ? "pointer-events-none opacity-50" : "cursor-pointer"}`}
                             onClick={()=>{
                                 setGrid(3)
                             }}
                             >
                                 3x3
                             </div>
-                            <div className={`hover:text-yellow-600 ${gridChoice == 4 ? "text-yellow-600" : ""} ${gridChoice != 4 && gridChoice != 0 ? "pointer-events-none opacity-50" : ""}`}
+                            <div className={`hover:text-yellow-600 ${gridChoice == 4 ? "text-yellow-600" : ""} ${gridChoice != 4 && gridChoice != 0 ? "pointer-events-none opacity-50" : "cursor-pointer"}`}
                             onClick={()=>{
                                 setGrid(4)
                             }}
                             >
                                 4x4
                             </div>
-                            <div className={`hover:text-yellow-600 ${gridChoice == 5 ? "text-yellow-600" : ""} ${gridChoice != 5 && gridChoice != 0 ? "pointer-events-none opacity-50" : ""}`}
+                            <div className={`hover:text-yellow-600 ${gridChoice == 5 ? "text-yellow-600" : ""} ${gridChoice != 5 && gridChoice != 0 ? "pointer-events-none opacity-50" : "cursor-pointer"}`}
                             onClick={()=>{
                                 setGrid(5)
                             }}
                             >
                                 5x5
                             </div>
-                            <div className={`hover:text-yellow-600 ${gridChoice == 9 ? "text-yellow-600" : ""} ${gridChoice != 9 && gridChoice != 0 ? "pointer-events-none opacity-50" : ""}`}
+                            <div className={`hover:text-yellow-600 ${gridChoice == 9 ? "text-yellow-600" : ""} ${gridChoice != 9 && gridChoice != 0 ? "pointer-events-none opacity-50" : "cursor-pointer"}`}
                             onClick={()=>{
                                 setGrid(9)
                             }}

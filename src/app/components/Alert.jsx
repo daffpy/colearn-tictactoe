@@ -25,22 +25,22 @@ export function GameStateAlert({isWin, setGrid, setResult}){
                         <br/>
                         <div className="flex flex-col lg:flex-row gap-5 text-blue-500">
                             &gt; now, play again?
-                            <div className="flex gap-5 mt-2 lg:mt-0 text-yellow-600 justify-center lg:justify-normal">
-                                <div className="hover:text-blue-500 hover:scale-[1.1] duration-200"
+                            <div className=" flex gap-5 mt-2 lg:mt-0 text-yellow-600 justify-center lg:justify-normal">
+                                <div className=" hover:text-blue-500 hover:scale-[1.1] duration-200"
                                 onClick={()=>{
                                     setGrid(0);
                                     setResult("playing")
                                 }
                                 }
                                 >
-                                    yes
+                                    [ yes ]
                                 </div>
-                                <div className="hover:text-blue-600 hover:scale-[1.1] duration-200"
+                                <div className=" hover:text-blue-600 hover:scale-[1.1] duration-200"
                                 onClick={() => {
                                     setAlertWindow(true)
                                 }}
                                 >
-                                    no <span className="italic">(view only)</span>
+                                    [ no <span className="italic">(view only)</span> ]
                                 </div>
                             </div>
                         </div>
