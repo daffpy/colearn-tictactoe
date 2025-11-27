@@ -31,7 +31,7 @@ export default function MainPageLayout(){
                             &gt; choose grid amount: 
                         </div>
                         
-                        <div className='flex gap-5'>
+                        <div className='flex gap-5 justify-center lg:justify-normal'>
                             <div className={`hover:text-yellow-600 ${gridChoice == 3 ? "text-yellow-600" : ""} ${gridChoice != 3 && gridChoice != 0 ? "pointer-events-none opacity-50" : "cursor-pointer"}`}
                             onClick={()=>{
                                 setGrid(3)
@@ -69,7 +69,7 @@ export default function MainPageLayout(){
                     <>
                     <div className='flex justify-center'>
                         <div>
-                            <div className='w-fit py-2 px-4 text-base mt-5 text-yellow-600 border-[1.5] border-dashed'>
+                            <div className='w-fit py-2 px-4 text-base mt-5 text-yellow-600 border-t-[1.5] border-b-[1.5] border-dashed'>
                             O = <span className='text-blue-500'>Me</span>
                             <br/>
                             X = <span className='text-blue-500'>You</span>
