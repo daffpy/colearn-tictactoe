@@ -26,8 +26,11 @@ export default function MainPageLayout(){
                     <div className='text-center'>
                         wanna have some fun? try playing this tic-tac-toe against me!
                     </div>
-                    <div className='mt-10 text-base text-blue-500 flex gap-4'>
-                        &gt; choose grid amount: 
+                    <div className='mt-10 text-base text-blue-500 flex flex-col lg:flex-row gap-4'>
+                        <div>
+                            &gt; choose grid amount: 
+                        </div>
+                        
                         <div className='flex gap-5'>
                             <div className={`hover:text-yellow-600 ${gridChoice == 3 ? "text-yellow-600" : ""} ${gridChoice != 3 && gridChoice != 0 ? "pointer-events-none opacity-50" : "cursor-pointer"}`}
                             onClick={()=>{

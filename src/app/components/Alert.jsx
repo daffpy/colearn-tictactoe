@@ -8,7 +8,8 @@ export function GameStateAlert({isWin, setGrid, setResult}){
     return(
         <>
         {isWin != "playing" && closeAlertWindow == false ?
-            <div className="absolute h-100 min-w-100 border outline bg-white/80 backdrop-blur-xs rounded-xl left-1/2 -translate-x-1/2">
+            <div className="absolute w-full max-w-200 px-10 left-1/2 -translate-x-1/2">
+                <div className="border outline bg-white/80 pb-10 backdrop-blur-xs rounded-xl ">
                 <div className="text-4xl mt-10 text-center uppercase font-semibold">
                     - YOU {isWin} -
                 </div>
@@ -46,6 +47,7 @@ export function GameStateAlert({isWin, setGrid, setResult}){
                         </div>
                     </div>
                     
+                </div>
                 </div>
             </div>
             : null
