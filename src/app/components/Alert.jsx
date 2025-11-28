@@ -8,9 +8,9 @@ export function GameStateAlert({isWin, setGrid, setResult}){
     return(
         <>
         {isWin != "playing" && closeAlertWindow == false ?
-            <div className="absolute w-full max-w-200 px-10 left-1/2 -translate-x-1/2">
+            <div className="absolute w-full max-w-200 px-8 left-1/2 -translate-x-1/2">
                 <div className="border outline bg-white/80 mb-10 pb-10 backdrop-blur-xs rounded-xl ">
-                <div className="text-4xl mt-10 text-center uppercase font-semibold">
+                <div className="text-3xl text-blue-500 lg:text-4xl mt-10 text-center uppercase font-semibold">
                     - YOU {isWin} -
                 </div>
                 <div className="py-4 px-6 lg:px-8 lg:py-4">

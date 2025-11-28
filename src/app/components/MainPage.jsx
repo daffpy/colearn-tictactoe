@@ -19,7 +19,7 @@ export default function MainPageLayout(){
     return(
         <div className={`${bitcount.className} flex justify-center`}>
             <div className="mt-10 text-center">
-                <div className="mx-3 text-3xl lg:text-4xl text-blue-500 font-semibold hover:scale-[1.1] lg:hover:scale-[1.2] duration-300">
+                <div className="mx-3 text-3xl lg:text-4xl text-blue-500 font-semibold hover:scale-[1.1] lg:hover:scale-[1.15] duration-300">
                     CoLearn Tic-Tac-Toe
                 </div>
                 <div className="lg:text-lg mt-3 text-base mx-8 text-left text-yellow-600 font-medium">
