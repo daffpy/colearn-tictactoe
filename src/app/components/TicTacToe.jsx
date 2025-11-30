@@ -20,6 +20,7 @@ export default function TicTacToeGame({grid, isWin, setResult}){
         currRow = []
     }
     const [board, setBoard] = useState(initialBoard)
+    const [winTiles, setWinTiles] = useState([])
 
     function findAllEmptyCell(board) {
         const emptyCells = [];
@@ -56,6 +57,7 @@ export default function TicTacToeGame({grid, isWin, setResult}){
         setBoard(newArray)
         if(checkOWin(newArray,row,col)){
             setResult("lost");
+            setWinTiles(getWinningTiles( newArray, row, col, "O"))
             return;
         }
 
@@ -111,6 +113,48 @@ export default function TicTacToeGame({grid, isWin, setResult}){
 
         return rowWin || colWin || mainDiagValid || antiDiagValid;
     }
+    function getWinningTiles(board, row, col, player){
+        const tileLength = board[row].length
+        const rowWin = board[row].every(v => v === player);
+        let winningTiles = []
+        if(rowWin){
+            for(let i = 0; i < tileLength; i++){
+                winningTiles.push([row,i])
+            }
+        }
+        const colWin = board.map(r => r[col]).every(v => v === player);
+        if(colWin){
+            for(let i = 0; i < tileLength; i++){
+                winningTiles.push([i,col])
+            }
+        }
+        let mainDiagValid = true
+        for(let x=0; x < tileLength; x++){
+            if(board[x][x] != player){
+                mainDiagValid = false
+                break;
+            }
+        }
+        if(mainDiagValid){
+            for(let i = 0; i < tileLength; i++){
+                winningTiles.push([i,i])
+            }
+        }
+        let antiDiagValid = true
+        for(let x=0; x < tileLength; x++){
+            if(board[x][tileLength - 1 - x] != player){
+                antiDiagValid = false
+                break;
+            }
+        }
+        if(antiDiagValid){
+            for(let i = 0; i < tileLength; i++){
+                winningTiles.push([i,tileLength - 1 - i])
+            }
+        }
+        return winningTiles
+
+    }
 
     // karena issue tailwind engga bisa dynamic class import 
     const gridVariants = {
@@ -124,7 +168,7 @@ export default function TicTacToeGame({grid, isWin, setResult}){
             {board.map((row,rIdx)=>
                 row.map((col, cIdx)=>{
                     return(
-                        <div key={rIdx + cIdx} className={`text-yellow-600 border ${isWin === "playing" ? "hover:scale-[1.15] duration-300" : ""}  bg-[#F9F8F6] border-blue-600 flex justify-center items-center aspect-square`}
+                        <div key={rIdx + cIdx} className={`text-yellow-600 border ${isWin === "won" && winTiles.some(([r, c]) => r === rIdx && c === cIdx) ? "bg-green-200" : ""} ${isWin === "lost" && winTiles.some(([r, c]) => r === rIdx && c === cIdx) ? "bg-red-200" : ""} ${isWin === "playing" ? "hover:scale-[1.15] duration-300 bg-[#F9F8F6]" : ""}   border-blue-600 flex justify-center items-center aspect-square`}
                         onClick={() => {
                             if (board[rIdx][cIdx] !== "") return;
                             if (isWin !== "playing") return;
@@ -134,6 +178,7 @@ export default function TicTacToeGame({grid, isWin, setResult}){
                             setBoard(newArray);           
                             if(checkXWin(newArray,rIdx,cIdx)){
                                 setResult("won")
+                                setWinTiles(getWinningTiles( newArray, rIdx, cIdx, "X"))
                                 return;
                             }
                             fillRandomCell(newArray);
